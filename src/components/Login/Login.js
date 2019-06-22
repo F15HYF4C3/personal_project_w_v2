@@ -23,8 +23,8 @@ class Login extends Component {
         .then((authorize)=>{
             if(authorize.data.success){
                 this.props.dispatch({
-                    type: 'users',
-                    payload: authorize.data.users
+                    type: 'guest',
+                    payload: authorize.data.guest
                 })
                 this.props.history.push('/Home');
             }else{

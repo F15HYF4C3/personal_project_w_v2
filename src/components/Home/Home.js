@@ -19,24 +19,24 @@ class Home extends Component {
 
                 <div>
                 <Link to="/Master">
-                    <span containerStyle="font-size: 48px; color: Dodgerblue;">
-                        <i class="fas fa-angle-double-left">Master List</i>
+                    <span containerstyle="font-size: 48px; color: Dodgerblue;">
+                        <i className="fas fa-angle-double-left">Master List</i>
                     </span>
                 </Link>  
                 </div>
 
                 <div>
                 <Link to="/MyList">
-                    <span containerStyle="font-size: 48px; color: Dodgerblue;">
-                        <i class="fas fa-angle-double-left">My List</i>
+                    <span containerstyle="font-size: 48px; color: Dodgerblue;">
+                        <i className="fas fa-angle-double-left">My List</i>
                     </span>
                 </Link>
                 </div>
 
                 <div>
                 <Link to="/WeddingColors">
-                    <span containerStyle="font-size: 48px; color: Dodgerblue;">
-                        <i class="fas fa-angle-double-left">Wedding Colors</i>
+                    <span containerstyle="font-size: 48px; color: Dodgerblue;">
+                        <i className="fas fa-angle-double-left">Wedding Colors</i>
                     </span>
                 </Link>
                 </div>

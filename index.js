@@ -21,6 +21,20 @@ massive(DB_STRING)
         console.log(`You have been defeated by ${err}.`)
     })
 
+    app.get('/api/guest', (req, res, next)=>{
+        const db = req.app.get('db');
+        db.GUEST_TABLE({id:req.query.id})
+        .then((guest)=>{
+            console.log(guest)
+            res.send(guest)
+
+        })
+        // .catch
+    })
+// app.get('/api/guests', function(rq, res, next){
+//     req.app.get('db').GUEST_TABLE()
+//     .then(guests =>{})
+// })
 app.use(cors());
 app.use(bodyParser.json(SESSION_SECRET));
 app.use(session({
