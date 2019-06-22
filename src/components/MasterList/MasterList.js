@@ -1,12 +1,20 @@
-import React from 'react';
+import React, {Component} from 'react';
+import './MasterList.css';
+import * as Actions from '../../redux/actions/action_creator';
+import Banner from '../../static/Banner';
+import { connect } from 'react-redux';
 
 
-const MasterList = (props) =>{
+class MasterList extends Component {
+    render(){
+        return (
 
-    return (
-        <div className="MasterList">
-            <h1>MasterList</h1>
-        </div>
-    )
+            <div className="MasterList">
+                <Banner/>
+                <h1>MasterList</h1>
+                {/* {ListItems} */}
+            </div>
+        )
+    }
 }
-export default MasterList
+export default connect(state => state, Actions)(MasterList);

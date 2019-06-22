@@ -9,23 +9,43 @@ import MyList from './components/MyList/MyList';
 import WeddingColors from './components/WeddingColors/WeddingColors';
 
 class App extends Component {
+	constructor(props){
+		super(props);
+		this.state = {
+	
+		}
+	}
+
   componentDidMount(){
     axios.get('/api/login')
       .then((response)=>{
         console.log(response.data)
       })
   }
+
 	render() {
+		// let path = this.props;
+		// let home;
+		// 	if(path ==="/Master"  
+		// 	|| path ==="/MyList" 
+		// 	|| path ==="/WeddingColors"){
+		// 		home = <Home/>
+		// 	} else {
+		// 		home = null
+		// }
+		// Keep getting TypeError: Cannot read property 'pathname' of undefined
+	
 		return (
 			<div className="app">
-			
-					<Switch>
-						<Route path="/Home" component={Home} />
-						<Route path="/Master" component={MasterList} />
-						<Route path="/MyList" component={MyList} />
-            <Route path="/WeddingColors" component={WeddingColors} />
-						<Route path="/" component={Login} />
-					</Switch>
+				{/* {home} */}
+			{/* <h1></h1> */}
+				<Switch>
+					<Route path="/Home" component={Home} />
+					<Route path="/Master" component={MasterList} />
+					<Route path="/MyList" component={MyList} />
+					<Route path="/WeddingColors" component={WeddingColors} />
+					<Route path="/" component={Login} />
+				</Switch>
 			
 			</div>
 		);

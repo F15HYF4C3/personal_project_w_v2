@@ -1,12 +1,15 @@
 import React from 'react';
+import Banner from '../../static/Banner';
 
 
 const MyList = (props) =>{
 
     return (
         <div className="MyList">
-            <h1>MyList</h1>
-        </div>
+                <Banner/>
+                <h1>My List</h1>
+
+            </div>
     )
 }
 export default MyList
