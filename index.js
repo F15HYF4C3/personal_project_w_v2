@@ -5,7 +5,6 @@ const massive = require('massive');
 const session = require('express-session');
 require('dotenv').config();
 const login = require('./server-controller/controller/login');
-const register = require('./server-controller/controller/login');
 // const masterList = require('.server-controller/controller/master_list');
 // const myList = require('.server-controller/controller/my_list');
 
@@ -21,16 +20,18 @@ massive(DB_STRING)
         console.log(`You have been defeated by ${err}.`)
     })
 
-    app.get('/api/guest', (req, res, next)=>{
-        const db = req.app.get('db');
-        db.GUEST_TABLE({id:req.query.id})
-        .then((guest)=>{
-            console.log(guest)
-            res.send(guest)
 
-        })
-        // .catch
-    })
+    // app.get('/api/guest', (req, res, next)=>{
+    //     const db = req.app.get('db');
+    //     db.GUEST_TABLE({id:req.query.id})
+    //     .then((guest)=>{
+    //         console.log(guest)
+    //         res.send(guest)
+
+    //     })
+    //     // .catch
+    // })
+
 // app.get('/api/guests', function(rq, res, next){
 //     req.app.get('db').GUEST_TABLE()
 //     .then(guests =>{})
@@ -45,10 +46,16 @@ app.use(session({
 }));
 
 
-
-
-app.post('/api/register', register.register)
+app.post('/api/register', login.register)
 app.post('/api/login', login.login)
+
+app.use('/api/*', (req, res, next)=>{
+    if(!req.session.user){
+        res.send({success:false, message:'Please login'})
+    }
+})
+
+
 
 app.use((req, res, next)=>{
     if(req.session.user){
@@ -57,6 +64,8 @@ app.use((req, res, next)=>{
         res.send({success:false, isLoggedIn:false, err:"Login or Sign Up"})
     }
 })  
+
+
 
 app.listen(PORT, ()=>{
     console.log(`Man the bow! portside ${PORT}!`)
