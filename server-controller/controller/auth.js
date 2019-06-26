@@ -40,13 +40,12 @@ module.exports = {
             .then((guest)=>{
                 if(guest){
                    throw('Sorry this email already exists. Please login.')
-                }else{ 
-                 
+                }else{
                     return bcrypt.genSalt(password, saltRounds);
                 }
             })
             .then((hash) => {
-                return db.guest_table.insert({full_name, email, password, bg_names})
+                return db.REGISTER.insert({full_name, email, password:hash, bg_names})
             .then((guest)=>{
                
                 delete guest.password;

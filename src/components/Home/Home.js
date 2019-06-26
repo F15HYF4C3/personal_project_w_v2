@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './Home.css';
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
 import * as Actions from '../../redux/actions/action_creator';
 import Logout from '../../static/Logout/Logout'
 // import MasterList from '../MasterList/MasterList';

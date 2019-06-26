@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './Login.css';
 import axios from 'axios';
 import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
 
 
 class Login extends Component {
@@ -33,10 +34,10 @@ class Login extends Component {
         })
     }
     
-    handleChange = (e) => {
+    handleChange = (event) => {
       console.log("hit")
         this.setState({
-            [e.target.name]: e.target.value
+            [event.target.name]: event.target.value
         })
     }
 
@@ -45,7 +46,7 @@ class Login extends Component {
     return ( 
     
 <div className="login">
-{/* <form onSubmit={this.login}> */}
+    
     <h1>Welcome to the Wedding Coordinator, Please Login.
 </h1>
     <div className="login-box">
@@ -66,14 +67,13 @@ class Login extends Component {
 
         <div className="buttons">
 
-            <button type="submit" onClick={this.login}>
+            <button onClick={this.login}>
                 Login
-                {/* <Link to="/Home"></Link> */}
             </button>
 
             <button type="submit" onClick={this.register}>
-                Register
-            {/* <Link to="/Register"></Link> */}
+                
+            <Link to="/Register">Register</Link>
             </button>
             
         </div>

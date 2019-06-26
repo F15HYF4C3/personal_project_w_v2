@@ -4,7 +4,8 @@ const bodyParser = require('body-parser');
 const massive = require('massive');
 const session = require('express-session');
 require('dotenv').config();
-const login = require('./server-controller/controller/login');
+const auth = require('./server-controller/controller/auth');
+// const login = require('./server-controller/controller/auth');
 // const masterList = require('.server-controller/controller/master_list');
 // const myList = require('.server-controller/controller/my_list');
 
@@ -32,10 +33,6 @@ massive(DB_STRING)
     //     // .catch
     // })
 
-// app.get('/api/guests', function(rq, res, next){
-//     req.app.get('db').GUEST_TABLE()
-//     .then(guests =>{})
-// })
 app.use(cors());
 app.use(bodyParser.json(SESSION_SECRET));
 app.use(session({
@@ -45,25 +42,32 @@ app.use(session({
     cookie: {maxAge:30000}
 }));
 
-
-app.post('/api/register', login.register)
-app.post('/api/login', login.login)
-
-app.use('/api/*', (req, res, next)=>{
+app.use('/api/*', (req, res, next) => {
     if(!req.session.user){
-        res.send({success:false, message:'Please login'})
+        res.send({success:false, message:'You will need to login to access this page.'})
+    }else{
+        next();
     }
+
 })
 
 
 
-app.use((req, res, next)=>{
+app.post('/auth/register', auth.register)
+app.post('/auth/login', auth.login)
+
+app.get('/auth/guest', (req, res, next)=>{
     if(req.session.user){
-        next();
+        res.send({success:true})
     }else{
-        res.send({success:false, isLoggedIn:false, err:"Login or Sign Up"})
+        res.send({success:false})
     }
-})  
+   
+})
+
+
+
+
 
 
 

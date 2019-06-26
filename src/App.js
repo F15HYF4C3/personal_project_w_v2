@@ -3,6 +3,7 @@ import {Switch, Route} from 'react-router-dom';
 import axios from 'axios';
 import './App.css';
 import Login from './components/Login/Login';
+import Register from './components/Login/Register/Register';
 import Home from './components/Home/Home';
 import MasterList from './components/MasterList/MasterList';
 import MyList from './components/MyList/MyList';
@@ -44,6 +45,7 @@ class App extends Component {
 					<Route path="/Master" component={MasterList} />
 					<Route path="/MyList" component={MyList} />
 					<Route path="/WeddingColors" component={WeddingColors} />
+					<Route path="/Register" component={Register} />
 					<Route path="/" component={Login} />
 				</Switch>
 			
