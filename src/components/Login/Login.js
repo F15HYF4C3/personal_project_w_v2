@@ -19,11 +19,11 @@ class Login extends Component {
 			email: this.state.email,
 			password: this.state.password
 		}
-		axios.post("/api/login", credentials).then(login => {
-			if (login.data.success) {
+		axios.post("/api/login", credentials).then(credentials => {
+			if (credentials.data.success) {
 				this.props.dispatch({
 					type: "guest",
-					payload: login.data.guest
+					payload: credentials.data.guest
 				})
 				this.props.history.push("/Home")
 			} else {
