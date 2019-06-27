@@ -67,7 +67,7 @@ app.get("/api/guest", (req, res, next) => {
 		res.send({ success: false })
 	}
 })
-app.use("/*", (req, res) => {
+app.get("/*", (req, res) => {
 	res.sendFile("index.html", {
 		root: path.join(__dirname, "build")
 	})
