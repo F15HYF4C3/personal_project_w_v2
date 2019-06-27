@@ -4,6 +4,7 @@ const bodyParser = require("body-parser")
 const massive = require("massive")
 const session = require("express-session")
 require("dotenv").config()
+const path = require("path")
 const auth = require("./server-controller/controller/auth")
 // const login = require('./server-controller/controller/auth');
 // const masterList = require('.server-controller/controller/master_list');
