@@ -15,11 +15,11 @@ class App extends Component {
 		this.state = {}
 	}
 
-	componentDidMount = () => {
-		axios.get("/api/login").then(response => {
-			console.log(response.data)
-		})
-	}
+	// componentDidMount = () => {
+	// 	axios.get("/api/login").then(response => {
+	// 		console.log(response.data)
+	// 	})
+	// }
 
 	render() {
 		// let path = this.props;

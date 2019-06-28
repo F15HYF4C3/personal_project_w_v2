@@ -36,11 +36,11 @@ massive(DATABASE_URL)
 // })
 
 app.use(cors())
-app.use(bodyParser.json(SESSION_SECRET))
+app.use(bodyParser.json())
 app.use(
 	session({
 		secret: SESSION_SECRET,
-		resave: true,
+		resave: false,
 		saveUninitialized: true,
 		cookie: { maxAge: 30000 }
 	})
