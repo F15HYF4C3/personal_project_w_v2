@@ -13,6 +13,8 @@ const auth = require("./server-controller/controller/auth")
 const { PORT, SESSION_SECRET, DATABASE_URL } = process.env
 const app = express()
 
+app.use(express.static(path.join(__dirname, "/build")))
+
 massive(DATABASE_URL)
 	.then(dbPresence => {
 		app.set("db", dbPresence)
@@ -57,7 +59,7 @@ app.use("/api/*", (req, res, next) => {
 		next()
 	}
 })
-app.use(express.static(path.join(__dirname, "/build")))
+
 app.get("/api/guest", (req, res, next) => {
 	if (req.session.user) {
 		res.send({ success: true })
