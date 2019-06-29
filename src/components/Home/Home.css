@@ -1,0 +1,29 @@
+.photo-box {
+	object-fit: cover;
+	object-position: 50% 0;
+	width: 35vw;
+	height: 55vh;
+	margin-bottom: 20px;
+	/* margin: 15px; */
+	padding: 10px;
+}
+.display-mid {
+	display: flex;
+	justify-content: center;
+	margin: 10px;
+	flex-direction: row;
+}
+.photo {
+	padding-top: 30px;
+	max-width: 100%;
+	height: 100%;
+	border-radius: 40px;
+	display: flex;
+	justify-content: center;
+	color: rgb(252, 246, 233);
+	font-size: 40px;
+	width: inherit;
+	height: inherit;
+	background-image: url("./mediumEPWed.JPG");
+	/* background-image: url("./SoftPeachPeopny.jpg"); */
+}

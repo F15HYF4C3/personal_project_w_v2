@@ -1,53 +1,54 @@
-import React, {Component} from 'react';
-import './Home.css';
-import {Link} from 'react-router-dom';
-import * as Actions from '../../redux/actions/action_creator';
-import Logout from '../../static/Logout/Logout'
+import React, { Component } from "react";
+import "./Home.css";
+import { Link } from "react-router-dom";
+import * as Actions from "../../redux/actions/action_creator";
+import Logout from "../../static/Logout/Logout";
 // import MasterList from '../MasterList/MasterList';
 // import MyList from '../MyList/MyList';
 // import WeddingColors from '../WeddingColors/WeddingColors';
-import { connect } from 'react-redux';
-
+import { connect } from "react-redux";
 
 class Home extends Component {
-//take away individual divs to make items linked display in-a-line
-    render(){
-        return (
-            <div className="Home">
-                <Logout/>
-                <h1>Home</h1>
+	//take away individual divs to make items linked display in-a-line
+	render() {
+		return (
+			<div className="Home">
+				<Logout className="logout" />
 
-                <div>
-                <Link to="/Master">
-                    <span containerstyle="font-size: 48px; color: Dodgerblue;">
-                        <i className="fas fa-angle-double-left">Master List</i>
-                    </span>
-                </Link>  
-                </div>
+				<h1>August || Emma & Patrick's Wedding || 2019</h1>
 
-                <div>
-                <Link to="/MyList">
-                    <span containerstyle="font-size: 48px; color: Dodgerblue;">
-                        <i className="fas fa-angle-double-left">My List</i>
-                    </span>
-                </Link>
-                </div>
+				<div className="display-mid">
+					<div className="photo-box">
+						<div className="photo">August 1st, 2019</div>
+					</div>
+					<div className="button-box">
+						<div className="Links">
+							<button>
+								<Link to="/Master" className="links">
+									Master Volunteer List
+								</Link>
+							</button>
 
-                <div>
-                <Link to="/WeddingColors">
-                    <span containerstyle="font-size: 48px; color: Dodgerblue;">
-                        <i className="fas fa-angle-double-left">Wedding Colors</i>
-                    </span>
-                </Link>
-                </div>
+							<button>
+								<Link to="/MyList" className="links">
+									My List
+								</Link>
+							</button>
 
-<span>
-    {/* <WeddingColors/> */}
-</span>
-
-
-            </div>
-        )
-    }
+							<button>
+								<Link to="/WeddingColors" className="links">
+									Wedding Colors
+								</Link>
+							</button>
+						</div>
+					</div>
+				</div>
+				<div className="non-mvp">Coming Soon</div>
+			</div>
+		);
+	}
 }
-export default connect(state => state, Actions)(Home);
+export default connect(
+	state => state,
+	Actions
+)(Home);
