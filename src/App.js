@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import { Switch, Route } from "react-router-dom"
-import axios from "axios"
+// import axios from "axios"
 import "./App.css"
 import Login from "./components/Login/Login"
 import Register from "./components/Login/Register/Register"
