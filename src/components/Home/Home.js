@@ -9,6 +9,15 @@ import Logout from "../../static/Logout/Logout";
 import { connect } from "react-redux";
 
 class Home extends Component {
+	// Need to add componentDidMount(){
+	// 	axios.get('/api/')
+	// 	.then(({data}) =>{
+	// 		this.setState({
+	// 			thing:thing2
+
+	// 		})
+	// 	})
+	// }
 	//take away individual divs to make items linked display in-a-line
 	render() {
 		return (

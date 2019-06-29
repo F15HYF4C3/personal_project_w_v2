@@ -13,8 +13,6 @@ const auth = require("./server-controller/controller/auth");
 const { PORT, SESSION_SECRET, DATABASE_URL } = process.env;
 const app = express();
 
-app.use(express.static(path.join(__dirname, "/build")));
-
 massive(DATABASE_URL)
 	.then(dbPresence => {
 		app.set("db", dbPresence);
@@ -23,7 +21,7 @@ massive(DATABASE_URL)
 	.catch(err => {
 		console.log(`You have been defeated by ${err}.`);
 	});
-
+app.use(express.static(path.join(__dirname, "/build")));
 // app.get('/api/guest', (req, res, next)=>{
 //     const db = req.app.get('db');
 //     db.GUEST_TABLE({id:req.query.id})
@@ -49,6 +47,7 @@ app.use(
 app.post("/api/register", auth.register);
 app.post("/api/login", auth.login);
 
+// endpoint middleware below catches anything that starts with "api"
 app.use("/api/*", (req, res, next) => {
 	if (!req.session.user) {
 		res.send({
@@ -61,7 +60,7 @@ app.use("/api/*", (req, res, next) => {
 });
 
 app.get("/api/guest", (req, res, next) => {
-	if (req.session.user) {
+	if (req.session.guest) {
 		res.send({ success: true });
 	} else {
 		res.send({ success: false });
