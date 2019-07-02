@@ -20,10 +20,17 @@
 	font-size: 40px;
 }
 .list-items {
-	background-image: url("./WeddingDaisySmaller.PNG");
+	margin-left: 355px;
+	margin-right: 355px;
+	margin-bottom: 19px;
+	margin-top: 19px;
+	width: 275px;
+	height: 275px;
+	border-radius: 75px;
+	/* background-image: url("./WeddingDaisySmaller.PNG");
 	display: flex;
 	justify-content: space-between;
-	/* padding-block: 20px; */
+	padding-block: 20px; */
 	flex-direction: row;
 }
 .non-mvp {

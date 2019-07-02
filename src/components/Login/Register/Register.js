@@ -30,6 +30,7 @@ class Register extends Component {
 		};
 
 		axios.post("/api/register", newGuest).then(newGuest => {
+			debugger;
 			if (newGuest.data.success) {
 				//Param - object.object.value
 				// this value needs to have a TRUE if you want the block to run

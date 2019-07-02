@@ -19,7 +19,11 @@ class MasterList extends Component {
 
 					{/* {ListItems} */}
 				</div>
-				<div className="list-items">
+				<div
+					className="list-items"
+					style={{
+						backgroundImage: `url("./WeddingDaisySmaller.PNG")`
+					}}>
 					<span>Item Section 1</span>
 					<span>Item Section 2</span>
 					<span>item Section 3</span>
