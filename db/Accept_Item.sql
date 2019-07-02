@@ -1,4 +1,4 @@
-select c.id, p.price, p.name, p.image_url, p.description, c.date_added 
-from master_list as 
-join product as p on c.product_id = p.id
-where user_id = ${id}
+select m.owner_id, v.item_name, v.image_url, v.quantity, m.volunteered
+from my_items as m
+join master_list as v on m.item_id = v.id
+where id = ${id}
