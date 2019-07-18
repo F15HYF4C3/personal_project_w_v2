@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+// import Image from "react-image-resizer";
 import "./Home.css";
 import { Link } from "react-router-dom";
 import * as Actions from "../../redux/actions/action_creator";
@@ -57,6 +58,7 @@ class Home extends Component {
 		);
 	}
 }
+
 export default connect(
 	state => state,
 	Actions

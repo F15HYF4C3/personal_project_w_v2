@@ -1,10 +1,12 @@
 .photo-box {
 	object-fit: cover;
 	object-position: 50% 0;
-	width: 35vw;
-	height: 55vh;
+	/* width: 35vw;
+	height: 55vh; */
+	width: 640px;
+	height: 600px;
 	margin-bottom: 20px;
-	/* margin: 15px; */
+	margin: 15px;
 	padding: 10px;
 }
 .display-mid {
