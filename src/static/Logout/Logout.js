@@ -1,16 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./Logout.css";
 
 export default function Logout() {
 	return (
 		<div>
-			<div className="logout">
-				<Link to="/Login">
-					<span containerstyle="font-size: 48px; color: Dodgerblue;">
-						<i className="fas fa-angle-double-left">Logout</i>
-					</span>
+			<button className="logout-button">
+				<Link to="/Login" className="links">
+					Logout
 				</Link>
-			</div>
+			</button>
 		</div>
 	);
 }
