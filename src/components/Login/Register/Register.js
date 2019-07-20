@@ -49,7 +49,7 @@ class Register extends Component {
 
 	render() {
 		return (
-			<div className="Register">
+			<div className="register">
 				<h1>
 					Thank you for visiting the Wedding Coordinator for the first time,
 					please register.
@@ -100,7 +100,9 @@ class Register extends Component {
 				</button>
 
 				<button onClick={this.Login}>
-					<Link to="/">Login</Link>
+					<Link to="/" className="links">
+						Login
+					</Link>
 				</button>
 			</div>
 		);
